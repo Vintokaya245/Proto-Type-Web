@@ -6,6 +6,8 @@ use App\Models\Arsip;
 use App\Models\Periode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Exports\ArsipExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ArsipController extends Controller
 {
@@ -105,5 +107,22 @@ class ArsipController extends Controller
     {
         $arsip->delete();
         return redirect()->route('arsip.index')->with('success', 'Data arsip berhasil dihapus!');
+    }
+
+    /**
+     * Export arsip ke Excel sesuai filter periode
+     */
+    public function exportExcel(Request $request)
+    {
+        $query = \App\Models\Arsip::query();
+        $periodeNama = '';
+        if ($request->filled('periode_id')) {
+            $query->where('periode_id', $request->periode_id);
+            $periode = \App\Models\Periode::find($request->periode_id);
+            $periodeNama = $periode ? $periode->name : '';
+        }
+        $arsip = $query->get();
+        $export = new \App\Exports\ArsipExport($arsip, $periodeNama);
+        return \Maatwebsite\Excel\Facades\Excel::download($export, 'daftar_arsip_statis.xlsx');
     }
 }

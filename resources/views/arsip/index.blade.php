@@ -25,6 +25,9 @@
         </select>
         <input type="text" name="q" class="form-control w-auto" placeholder="Cari arsip..." value="{{ request('q') }}">
         <button type="submit" class="btn btn-primary btn-sm">Cari</button>
+        <a href="{{ route('arsip.exportExcel', array_filter(['periode_id' => request('periode_id')])) }}" class="btn btn-success btn-sm ms-2">
+            Download Excel
+        </a>
     </form>
 <script>
     document.addEventListener('DOMContentLoaded', function() {

@@ -86,6 +86,25 @@
         </div>
     </section>
 
+    <!-- Section Jumlah Arsip Publik (copy dari dashboard admin) -->
+    <section class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card text-white mb-4" style="background-color: #e74c3c;">
+                    <div class="card-body text-center">
+                        <h2 class="fw-bold" style="font-size:2.5rem;">{{ isset($arsipCount) ? $arsipCount : 0 }} Arsip</h2>
+                        <div>Data Arsip</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 text-center">
+                        <a href="{{ url('/arsip') }}" class="btn btn-light btn-sm">
+                            Lihat data <span>&#8594;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials -->
     <section class="bg-light py-5">
         <div class="container text-center">
