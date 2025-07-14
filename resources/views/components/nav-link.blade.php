@@ -1,3 +1,7 @@
+{{--
+    Komponen link navigasi utama (navbar)
+--}}
+
 @props(['active'])
 
 @php

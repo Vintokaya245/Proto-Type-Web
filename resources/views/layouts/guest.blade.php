@@ -1,3 +1,7 @@
+<!--
+    Layout utama untuk halaman guest (login, register, dsb)
+    Berisi struktur HTML dasar, import CSS/JS, dan slot konten utama
+-->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -5,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Login</title>
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,8 +33,8 @@
                 border-radius: 10px;
             }
             .form-control:focus {
-                border-color: #00A000;
-                box-shadow: 0 0 0 0.25rem rgba(0, 160, 0, 0.25);
+                border-color: #1976D2;
+                box-shadow: 0 0 0 0.25rem rgba(25, 118, 210, 0.25);
             }
             .text-success {
                 color: #00A000 !important;

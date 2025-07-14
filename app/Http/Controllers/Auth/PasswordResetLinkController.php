@@ -8,10 +8,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\View\View;
 
+// =============================
+// Controller untuk reset password link
+// Berisi: tampilkan form forgot password dan kirim link reset
+// =============================
+
 class PasswordResetLinkController extends Controller
 {
     /**
      * Display the password reset link request view.
+     * Tampilkan halaman form forgot password
      */
     public function create(): View
     {
@@ -20,8 +26,7 @@ class PasswordResetLinkController extends Controller
 
     /**
      * Handle an incoming password reset link request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
+     * Proses kirim link reset password ke email user
      */
     public function store(Request $request): RedirectResponse
     {
@@ -39,6 +44,6 @@ class PasswordResetLinkController extends Controller
         return $status == Password::RESET_LINK_SENT
                     ? back()->with('status', __($status))
                     : back()->withInput($request->only('email'))
-                        ->withErrors(['email' => __($status)]);
+                            ->withErrors(['email' => __($status)]);
     }
 }

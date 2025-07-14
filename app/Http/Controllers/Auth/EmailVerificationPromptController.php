@@ -3,19 +3,24 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
+
+// =============================
+// Controller untuk tampilkan halaman prompt verifikasi email
+// Berisi: tampilkan halaman yang meminta user untuk verifikasi email
+// =============================
 
 class EmailVerificationPromptController extends Controller
 {
     /**
      * Display the email verification prompt.
+     * Tampilkan halaman yang meminta user untuk verifikasi email
      */
-    public function __invoke(Request $request): RedirectResponse|View
+    public function __invoke(Request $request)
     {
         return $request->user()->hasVerifiedEmail()
-                    ? redirect()->intended(route('dashboard', absolute: false))
+                    ? redirect()->intended(RouteServiceProvider::HOME)
                     : view('auth.verify-email');
     }
 }

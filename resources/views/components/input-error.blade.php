@@ -1,3 +1,7 @@
+{{--
+    Komponen untuk menampilkan pesan error pada input form
+--}}
+
 @props(['messages'])
 
 @if ($messages)

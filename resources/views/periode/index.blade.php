@@ -1,7 +1,15 @@
+{{--
+    Halaman utama daftar periode arsip
+    Berisi:
+    - Tabel data periode
+    - Tombol tambah, edit, hapus
+--}}
+
 @extends('layouts.app')
 
 @section('content')
 <div class="container py-4">
+    {{-- Header & tombol tambah periode --}}
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Periode</h2>
         @if(auth()->user()->role === 'admin')
@@ -9,6 +17,15 @@
         @endif
     </div>
 
+    {{-- Notifikasi sukses --}}
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    {{-- Tabel data periode --}}
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">

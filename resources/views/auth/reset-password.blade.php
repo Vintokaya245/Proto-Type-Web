@@ -1,3 +1,10 @@
+{{--
+    Halaman reset password
+    Berisi:
+    - Form input password baru
+    - Notifikasi status
+--}}
+
 <x-guest-layout>
     <form method="POST" action="{{ route('password.store') }}">
         @csrf

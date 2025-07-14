@@ -1,5 +1,10 @@
 <?php
 
+// =============================
+// Base Controller (parent) untuk semua controller lain
+// Bisa digunakan untuk fungsi global yang dipakai banyak controller
+// =============================
+
 namespace App\Http\Controllers;
 
 abstract class Controller

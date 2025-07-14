@@ -1,3 +1,7 @@
+<!--
+    Komponen navbar utama aplikasi
+    Berisi link navigasi ke dashboard, arsip, periode, profile, dsb
+-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
         <!-- Logo -->

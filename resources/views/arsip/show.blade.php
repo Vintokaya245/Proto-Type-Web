@@ -1,1 +1,3 @@
-{{-- Halaman ini dihapus karena fungsi view arsip dihapus --}} 
+{{--
+    Halaman detail arsip (fitur ini mungkin sudah dihapus)
+--}} 

@@ -9,10 +9,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
+// =============================
+// Controller untuk manajemen Session Login/Logout
+// Berisi: tampilkan form login, proses login, logout
+// =============================
+
 class AuthenticatedSessionController extends Controller
 {
     /**
-     * Display the login view.
+     * Tampilkan form login
      */
     public function create(): View
     {
@@ -21,6 +26,7 @@ class AuthenticatedSessionController extends Controller
 
     /**
      * Handle an incoming authentication request.
+     * Proses login user dengan email dan password
      */
     public function store(LoginRequest $request): RedirectResponse
     {
@@ -28,11 +34,13 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        // Ganti redirect ke dashboard tanpa RouteServiceProvider
+        return redirect()->intended('/dashboard');
     }
 
     /**
      * Destroy an authenticated session.
+     * Proses logout user
      */
     public function destroy(Request $request): RedirectResponse
     {

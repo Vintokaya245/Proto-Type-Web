@@ -15,8 +15,6 @@ Route::get('/dashboard', function () {
     return view('dashboard', compact('arsipCount'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/arsip/export-excel', [App\Http\Controllers\ArsipController::class, 'exportExcel'])->name('arsip.exportExcel');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -25,6 +23,8 @@ Route::middleware('auth')->group(function () {
     // Routes untuk Periode dan Arsip
     Route::resource('periode', PeriodeController::class);
     Route::resource('arsip', ArsipController::class);
+    // Route download excel arsip
+    Route::get('arsip-download-excel', [ArsipController::class, 'downloadExcel'])->name('arsip.downloadExcel');
 });
 
 require __DIR__.'/auth.php';

@@ -1,3 +1,7 @@
+{{--
+    Komponen link navigasi responsif (sidebar/menu mobile)
+--}}
+
 @props(['active'])
 
 @php

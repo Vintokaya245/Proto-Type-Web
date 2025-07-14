@@ -7,10 +7,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
+// =============================
+// Controller untuk manajemen Periode Arsip
+// Berisi fitur: list, tambah, edit, hapus periode
+// =============================
+
 class PeriodeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Menampilkan daftar periode
      */
     public function index()
     {
@@ -19,7 +24,7 @@ class PeriodeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Menampilkan form tambah periode
      */
     public function create()
     {
@@ -27,7 +32,7 @@ class PeriodeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Simpan data periode baru ke database
      */
     public function store(Request $request)
     {
@@ -39,7 +44,7 @@ class PeriodeController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Tampilkan detail periode (jika ada)
      */
     public function show(Periode $periode)
     {
@@ -47,7 +52,7 @@ class PeriodeController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Tampilkan form edit periode
      */
     public function edit(Periode $periode)
     {
@@ -55,7 +60,7 @@ class PeriodeController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update data periode di database
      */
     public function update(Request $request, Periode $periode)
     {
@@ -67,7 +72,7 @@ class PeriodeController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Hapus data periode dari database
      */
     public function destroy(Periode $periode)
     {

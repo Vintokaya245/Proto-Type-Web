@@ -9,10 +9,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+// =============================
+// Controller untuk manajemen Profile User
+// Berisi fitur: edit profile, update password, hapus akun
+// =============================
+
 class ProfileController extends Controller
 {
     /**
-     * Display the user's profile form.
+     * Menampilkan form edit profile user
      */
     public function edit(Request $request): View
     {
@@ -22,7 +27,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Update the user's profile information.
+     * Update data profile user di database
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
@@ -38,7 +43,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Delete the user's account.
+     * Hapus akun user dari database
      */
     public function destroy(Request $request): RedirectResponse
     {

@@ -1,3 +1,7 @@
+{{--
+    Komponen untuk menampilkan status session (misal: login sukses, logout, dsb)
+--}}
+
 @props(['status'])
 
 @if ($status)

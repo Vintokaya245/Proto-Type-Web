@@ -1,7 +1,15 @@
+{{--
+    Halaman tambah data arsip
+    Berisi:
+    - Form input data arsip baru
+    - Validasi dan notifikasi error
+--}}
+
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container py-4">
+    {{-- Form tambah data arsip --}}
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
